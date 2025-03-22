@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-sdk tools:overrideLibrary="androidx.xr.scenecore, androidx.xr.compose, androidx.xr.compose.material3"/>
 
     <application
-        android:name=".TemplateApp"
+        android:name="com.douraid.tasksmanagement.TasksManagementApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +14,7 @@
         android:theme="@style/Theme.AppTheme">
 
         <activity
-            android:name="template.MainActivity"
+            android:name="com.douraid.tasksmanagement.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">

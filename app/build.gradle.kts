@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.cash.paparazzi)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.google.dagger.hilt)
     alias(libs.plugins.google.ksp)
@@ -11,7 +10,7 @@ android {
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "template.app.id"
+        applicationId = "tasksmanagement.app.id"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.compileSdk.get().toInt()
         versionCode = 1
@@ -49,7 +48,7 @@ android {
         }
     }
 
-    namespace = "template"
+    namespace = "tasksmanagement"
 }
 
 dependencies {
@@ -60,7 +59,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.room.runtime)
-    implementation(libs.bundles.androidx.xr)
     implementation(libs.coil.compose)
     implementation(libs.coil.okhttp)
     implementation(libs.compose.material)

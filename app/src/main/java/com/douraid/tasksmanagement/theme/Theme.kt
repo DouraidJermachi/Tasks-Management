@@ -1,6 +1,5 @@
-package template.theme
+package com.douraid.tasksmanagement.theme
 
-import android.annotation.TargetApi
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -22,17 +21,22 @@ private val lightColorScheme = lightColorScheme(
 )
 
 @Composable
-@TargetApi(Build.VERSION_CODES.S)
-fun TemplateTheme(
+fun TasksManagementTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicTheme: Boolean = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S,
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
-        dynamicTheme && darkTheme -> dynamicDarkColorScheme(LocalContext.current)
-        dynamicTheme && !darkTheme -> dynamicLightColorScheme(LocalContext.current)
-        darkTheme -> darkColorScheme
-        else -> lightColorScheme
+        darkTheme -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            dynamicDarkColorScheme(LocalContext.current)
+        } else {
+            darkColorScheme
+        }
+
+        else -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            dynamicLightColorScheme(LocalContext.current)
+        } else {
+            lightColorScheme
+        }
     }
 
     MaterialTheme(
