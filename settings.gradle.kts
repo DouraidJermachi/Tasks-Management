@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "tasksmanagement"
 include(":app")
+include(":features:home:home_presentation")
+include(":features:details:details_presentation")

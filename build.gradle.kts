@@ -10,13 +10,14 @@ plugins {
     alias(libs.plugins.kotlin.android).apply(false)
     alias(libs.plugins.kotlinter).apply(false)
     alias(libs.plugins.square.sort.dependencies).apply(false)
+    alias(libs.plugins.android.library) apply false
 }
 
 apply(from = "buildscripts/githooks.gradle")
 apply(from = "buildscripts/versionsplugin.gradle")
 
 subprojects {
-    apply(from = "../buildscripts/detekt.gradle")
+    apply(from = rootProject.file("buildscripts/detekt.gradle"))
 
     apply(plugin = "com.squareup.sort-dependencies")
     apply(plugin = "org.jmailen.kotlinter")

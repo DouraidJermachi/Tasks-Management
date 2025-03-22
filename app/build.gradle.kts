@@ -53,12 +53,15 @@ android {
 
 dependencies {
     implementation(platform(libs.compose.bom))
+    implementation(project(":features:details:details_presentation"))
+    implementation(project(":features:home:home_presentation"))
     implementation(libs.android.material)
-    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.bundles.compose)
     implementation(libs.coil.compose)
     implementation(libs.coil.okhttp)
     implementation(libs.compose.material)
