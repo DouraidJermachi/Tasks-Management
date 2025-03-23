@@ -1,4 +1,4 @@
-package com.douraid.tasksmanagement
+package com.douraid.home.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun DetailsScreen(backNavigation: () -> Unit) {
+fun HomeScreen(onButtonClicked: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -25,8 +25,13 @@ fun DetailsScreen(backNavigation: () -> Unit) {
     ) {
         Text(
             modifier = Modifier.padding(16.dp),
-            text = "Details screen",
+            text = "Home screen",
             style = MaterialTheme.typography.titleMedium,
+        )
+
+        Text(
+            modifier = Modifier.padding(32.dp),
+            text = "This is the home screen, where you will find and access everything.",
         )
 
         Spacer(
@@ -37,9 +42,9 @@ fun DetailsScreen(backNavigation: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(32.dp),
-            onClick = backNavigation,
+            onClick = onButtonClicked,
         ) {
-            Text(text = "Go back")
+            Text(text = "Go to next screen")
         }
     }
 }

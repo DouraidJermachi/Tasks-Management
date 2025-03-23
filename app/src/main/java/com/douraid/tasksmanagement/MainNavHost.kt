@@ -11,6 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.douraid.details.presentation.DetailsScreen
+import com.douraid.home.presentation.HomeScreen
 
 @Composable
 internal fun MainNavHost(navController: NavHostController) {
@@ -23,7 +25,6 @@ internal fun MainNavHost(navController: NavHostController) {
         navController = navController,
         startDestination = MainRoute.Home.route,
     ) {
-        // home
         composable(route = MainRoute.Home.route) {
             HomeScreen(
                 onButtonClicked = {
@@ -31,7 +32,7 @@ internal fun MainNavHost(navController: NavHostController) {
                 },
             )
         }
-        // home
+
         composable(route = MainRoute.TaskDetails.route) {
             DetailsScreen(
                 backNavigation = { navController.navigateUp() },
