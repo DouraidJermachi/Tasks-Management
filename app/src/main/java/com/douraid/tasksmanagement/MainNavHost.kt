@@ -7,15 +7,22 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.douraid.details.presentation.DetailsScreen
 import com.douraid.home.presentation.HomeScreen
+import com.douraid.tasksmanagement.model.MainEvent
 
 @Composable
 internal fun MainNavHost(navController: NavHostController) {
+    val mainViewModel = MainViewModel()
+
+    val state by mainViewModel.state.collectAsStateWithLifecycle()
+
     NavHost(
         modifier =
             Modifier
@@ -27,7 +34,9 @@ internal fun MainNavHost(navController: NavHostController) {
     ) {
         composable(route = MainRoute.Home.route) {
             HomeScreen(
+                detailsOpenedCount = state.clickedCount,
                 onButtonClicked = {
+                    mainViewModel.onEvent(MainEvent.OnButtonClicked)
                     navController.navigate(MainRoute.TaskDetails.route)
                 },
             )

@@ -15,7 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun HomeScreen(onButtonClicked: () -> Unit) {
+fun HomeScreen(
+    detailsOpenedCount: Int,
+    onButtonClicked: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -32,6 +35,11 @@ fun HomeScreen(onButtonClicked: () -> Unit) {
         Text(
             modifier = Modifier.padding(32.dp),
             text = "This is the home screen, where you will find and access everything.",
+        )
+
+        Text(
+            modifier = Modifier.padding(32.dp),
+            text = "Details screen has been opened $detailsOpenedCount times.",
         )
 
         Spacer(

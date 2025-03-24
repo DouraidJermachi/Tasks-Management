@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.coil.okhttp)
     implementation(libs.compose.material)
+    implementation(libs.google.hilt.compose)
     implementation(libs.hilt.android)
     implementation(libs.square.moshi.kotlin)
     implementation(libs.square.retrofit)
